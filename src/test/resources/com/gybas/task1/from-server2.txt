@@ -1,0 +1,5 @@
+firstName: Anneliese
+lastName:  Leutheusser-Schnarrenberger
+street:    Leopoldstraße 11/2
+postCode:  80801
+location:  München
