@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class StrangeColonFormatParserTests {
+class StrangeColonFormatParserTests {
 
     private StrangeColonFormatParser testee = new StrangeColonFormatParser();
 
     @Test
-    public void returnEmptyMapForEmptyInput() {
+    void returnEmptyMapForEmptyInput() {
         assertThat(testee.parse("")).isEmpty();
     }
 }

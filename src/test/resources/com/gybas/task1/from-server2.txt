@@ -1,5 +1,6 @@
-firstName: Anneliese
-lastName:  Leutheusser-Schnarrenberger
-street:    Leopoldstraße 11/2
-postCode:  80801
-location:  München
+firstName: Fritz
+lastName:  Müller
+
+street:    Hauptstraße 42
+postCode:  70178
+location:  Stuttgart
