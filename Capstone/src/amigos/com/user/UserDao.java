@@ -1,6 +1,7 @@
 package amigos.com.user;
 
 import java.util.Arrays;
+import java.util.UUID;
 
 public class UserDao {
     private static User[] users;
@@ -13,7 +14,7 @@ public class UserDao {
         return this.users;
     }
 
-    public User getUser(int Id){
-        return Arrays.stream(users).filter(x->x.equals(Id)).findAny().get();
+    public User getById(UUID Id){
+        return Arrays.stream(users).filter(x->x.uuid().equals(Id)).findAny().get();
     }
 }

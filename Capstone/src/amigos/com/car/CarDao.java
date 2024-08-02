@@ -26,4 +26,14 @@ public class CarDao {
 
         return Arrays.stream(cars).filter(car -> car.isEletric()).toArray(Car[]::new);
     }
+    public Car getCarByID(String regNumber){
+
+        return Arrays.stream(cars).filter(car -> car.regNumber().equals(regNumber)).findAny().get();
+    }
+
+    public void deleteCar(String regNumber){
+
+        cars= Arrays.stream(cars).filter(car -> !car.regNumber().equals(regNumber)).toArray(Car[]::new);
+
+    }
 }
