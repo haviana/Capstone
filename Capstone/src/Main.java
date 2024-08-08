@@ -5,8 +5,8 @@ import amigos.com.car.Car;
 import amigos.com.car.CarDao;
 import amigos.com.car.CarService;
 import amigos.com.user.User;
-import amigos.com.user.UserDao;
-import amigos.com.user.UserService;
+import amigos.com.user.UserArrayDataAccessService;
+import amigos.com.user.UserFileDataAccessService;
 
 import java.util.Scanner;
 import java.util.UUID;
@@ -16,11 +16,11 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        UserDao userDao = new UserDao();
+
         CarDao carDao = new CarDao();
         BookingDao bookingDao = new BookingDao();
 
-        UserService userService = new UserService(userDao);
+        UserArrayDataAccessService userService = new UserArrayDataAccessService();
         CarService carService = new CarService(carDao);
         BookingService bookingService = new BookingService(bookingDao, carService);
 
@@ -29,7 +29,7 @@ public class Main {
             System.out.println(allUser);
         }
 
-        int option = 0;
+        int option;
         do {
             printMenu();
             option = Integer.parseInt(scanner.nextLine());
@@ -43,7 +43,7 @@ public class Main {
 
                     System.out.println("User ID: ");
                     UUID userId = UUID.fromString(scanner.nextLine());
-                    User userToBook = userService.getById(userId);
+                    User userToBook = userService.getUserByID(userId);
 
                     bookingService.addBooking(userToBook, regNumber);
                     break;

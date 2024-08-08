@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public class UserFileDataAccessService implements UserDao {
 
-    private final String filePath = "Capstone/src/User.csv";
+    private final String filePath = "src/User.csv";
     private static User[] users = new User[4];
 
     @Override

@@ -15,7 +15,5 @@ public class UserArrayDataAccessService implements UserDao {
         return this.users;
     }
 
-    public User getById(UUID Id) {
-        return Arrays.stream(users).filter(x -> x.uuid().equals(Id)).findAny().get();
-    }
+
 }
