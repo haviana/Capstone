@@ -3,7 +3,7 @@ package amigos.com.user;
 import java.util.UUID;
 
 public class UserService {
-    UserDao userDao = new UserDao();
+    UserArrayDataAccessService userDao = new UserArrayDataAccessService();
 
     public User[] getAllUsers() {
         return userDao.getAllUsers();

@@ -3,6 +3,7 @@ import amigos.com.booking.BookingService;
 import amigos.com.car.Car;
 import amigos.com.car.CarService;
 import amigos.com.user.User;
+import amigos.com.user.UserFileDataAccessService;
 import amigos.com.user.UserService;
 
 import java.util.Scanner;
@@ -16,6 +17,11 @@ public class Main {
         UserService userService = new UserService();
         CarService carService = new CarService();
         BookingService bookingService = new BookingService();
+
+        UserFileDataAccessService userFileDataAccessService = new UserFileDataAccessService();
+        for (User allUser : userFileDataAccessService.getAllUsers()) {
+            System.out.println(allUser);
+        }
 
         int option = 0;
         do {

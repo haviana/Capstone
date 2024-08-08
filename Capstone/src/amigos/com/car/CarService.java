@@ -1,8 +1,5 @@
 package amigos.com.car;
 
-import amigos.com.user.User;
-import amigos.com.user.UserDao;
-
 public class CarService {
 
     CarDao carDao = new CarDao();
