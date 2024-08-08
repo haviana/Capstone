@@ -1,9 +1,11 @@
 import amigos.com.booking.Booking;
+import amigos.com.booking.BookingDao;
 import amigos.com.booking.BookingService;
 import amigos.com.car.Car;
+import amigos.com.car.CarDao;
 import amigos.com.car.CarService;
 import amigos.com.user.User;
-import amigos.com.user.UserFileDataAccessService;
+import amigos.com.user.UserDao;
 import amigos.com.user.UserService;
 
 import java.util.Scanner;
@@ -14,9 +16,13 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
-        UserService userService = new UserService();
-        CarService carService = new CarService();
-        BookingService bookingService = new BookingService();
+        UserDao userDao = new UserDao();
+        CarDao carDao = new CarDao();
+        BookingDao bookingDao = new BookingDao();
+
+        UserService userService = new UserService(userDao);
+        CarService carService = new CarService(carDao);
+        BookingService bookingService = new BookingService(bookingDao, carService);
 
         UserFileDataAccessService userFileDataAccessService = new UserFileDataAccessService();
         for (User allUser : userFileDataAccessService.getAllUsers()) {

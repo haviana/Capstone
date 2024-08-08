@@ -8,8 +8,13 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 public class BookingService {
-    BookingDao bookingDao = new BookingDao();
-    CarService carService = new CarService();
+    BookingDao bookingDao ;
+    CarService carService ;
+
+    public BookingService(BookingDao bookingDao, CarService carService) {
+        this.bookingDao = bookingDao;
+        this.carService = carService;
+    }
 
     public Booking[] getAllBookings() {
         return bookingDao.getAllBookings();

@@ -2,7 +2,11 @@ package amigos.com.car;
 
 public class CarService {
 
-    CarDao carDao = new CarDao();
+    public CarService(CarDao carDao) {
+        this.carDao = carDao;
+    }
+
+    CarDao carDao ;
 
     public Car[] getAllCars() {
         return carDao.getAllCars();
